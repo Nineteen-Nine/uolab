@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>公开课详情</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        p{
+            width:300px;
+            height: 36px;
+            margin-left: 20px;
+            line-height: 36px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form layuimini-form">
+
+    <!--日期-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">日期</label>
+        <div class="layui-input-block">
+            <p>2021-01-30</p>
+        </div>
+    </div>
+    <!--技术专题-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">技术专题</label>
+        <div class="layui-input-block">
+            <p>Java软件开发</p>
+        </div>
+    </div>
+    <!--主讲人-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">主讲人</label>
+        <div class="layui-input-block">
+            <p>王阳明</p>
+        </div>
+    </div>
+    <!--组织人-->
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">组织人</label>
+        <div class="layui-input-block">
+            <p>王阳明老师、大雄、胖虎等</p>
+        </div>
+    </div>
+    <!--地点-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">地点</label>
+        <div class="layui-input-block">
+            <p>太原科技大学西校区D楼101</p>
+        </div>
+    </div>
+    <!--群体说明-->
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">群体说明</label>
+        <div class="layui-input-block">
+            <p>说明</p>
+        </div>
+    </div>
+    <!--方式-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">方式</label>
+        <div class="layui-input-block">
+            <p>线下</p>
+        </div>
+    </div>
+    <!--创新学分值-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">创新学分值</label>
+        <div class="layui-input-block">
+            <p>2.5</p>
+        </div>
+    </div>
+    <!--参加人数-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">参加人数</label>
+        <div class="layui-input-block">
+            <p>123</p>
+        </div>
+    </div>
+    <!--备注-->
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注信息</label>
+        <div class="layui-input-block">
+            <p>无</p>
+        </div>
+    </div>
+
+
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="../../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+
+            $ = layui.$;
+
+    });
+</script>
+</body>
+</html>

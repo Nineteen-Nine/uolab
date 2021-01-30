@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加院系</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form layuimini-form">
+    <!--学院名-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">学院</label>
+        <div class="layui-input-block">
+            <input id="college" type="text" name="college" lay-verify="required" placeholder="请输入学院名" value="" class="layui-input" onblur="checkCollege()"><span id="msg1"></span>
+            <tip>2-15个汉字</tip>
+        </div>
+    </div>
+    <!--院系代号-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">院系代号</label>
+        <div class="layui-input-block">
+            <input id="collegeNum" type="number" name="collegeNum" placeholder="请输入院系代号" value="" class="layui-input" onblur="checkNum()"><span id="msg2"></span>
+        </div>
+    </div>
+    <!--备注-->
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注信息</label>
+        <div class="layui-input-block">
+            <textarea name="remark" class="layui-textarea" placeholder="请输入备注信息"></textarea>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">确认保存</button>
+        </div>
+    </div>
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            $ = layui.$;
+        //监听提交
+        form.on('submit(saveBtn)', function (data) {
+            var index = layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            }, function () {
+
+                // 关闭弹出层
+                layer.close(index);
+
+                var iframeIndex = parent.layer.getFrameIndex(window.name);
+                parent.layer.close(iframeIndex);
+
+            });
+
+            return false;
+        });
+
+    });
+</script>
+<!--验证-->
+<script>
+    /*验证学院*/
+    function checkCollege(){
+        var college = document.getElementById('college').value;
+        var spanEle1 = document.getElementById('msg1')
+        var pattern = /^[\u4e00-\u9fa5]{2,15}$/;
+        if(college == null || college == '' || college.trim().length == 0){
+            spanEle1.innerHTML = "<small style='color: red'>未输入学院名</small>"
+        }else if(!pattern.test(college)){
+            spanEle1.innerHTML = "<small style='color: red'>请输入正确的学院名</small>"
+        }else {
+            spanEle1.innerHTML = ""
+        }
+    }
+    /*验证院系代码*/
+    function checkNum(){
+        var Num = document.getElementById('collegeNum').value;
+        var spanEle2 = document.getElementById('msg2')
+        var pattern = /^[0-9]{1,2}$/;
+        if(Num == null || Num == '' || Num.trim().length == 0){
+            spanEle2.innerHTML = "<small style='color: red'>未输入院系代码</small>"
+        }else if(!pattern.test(Num)){
+            spanEle2.innerHTML = "<small style='color: red'>请输入正确的院系代码</small>"
+        }else {
+            spanEle2.innerHTML = ""
+        }
+    }
+
+
+</script>
+</body>
+</html>

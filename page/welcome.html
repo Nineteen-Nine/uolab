@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+    <style>
+        .layui-card {border:1px solid #f2f2f2;border-radius:5px;}
+        .icon {margin-right:10px;color:#1aa094;}
+        .icon-cray {color:#ffb800!important;}
+        .icon-blue {color:#1e9fff!important;}
+        .icon-tip {color:#ff5722!important;}
+        .layuimini-qiuck-module {text-align:center;margin-top: 10px}
+        .layuimini-qiuck-module a i {display:inline-block;width:100%;height:60px;line-height:60px;text-align:center;border-radius:2px;font-size:30px;background-color:#F8F8F8;color:#333;transition:all .3s;-webkit-transition:all .3s;}
+        .layuimini-qiuck-module a cite {position:relative;top:2px;display:block;color:#666;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-size:14px;}
+        .welcome-module {width:100%;height:210px;}
+        .panel {background-color:#fff;border:1px solid transparent;border-radius:3px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}
+        .panel-body {padding:10px}
+        .panel-title {margin-top:0;margin-bottom:0;font-size:12px;color:inherit}
+        .label {display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em;margin-top: .3em;}
+        .layui-red {color:red}
+        .main_btn > p {height:40px;}
+        .layui-bg-number {background-color:#F8F8F8;}
+        .layuimini-notice:hover {background:#f6f6f6;}
+        .layuimini-notice {padding:7px 16px;clear:both;font-size:12px !important;cursor:pointer;position:relative;transition:background 0.2s ease-in-out;}
+        .layuimini-notice-title,.layuimini-notice-label {
+            padding-right: 70px !important;text-overflow:ellipsis!important;overflow:hidden!important;white-space:nowrap!important;}
+        .layuimini-notice-title {line-height:28px;font-size:14px;}
+        .layuimini-notice-extra {position:absolute;top:50%;margin-top:-8px;right:16px;display:inline-block;height:16px;color:#999;}
+    </style>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md8">
+                <div class="layui-row layui-col-space15">
+                    <!--数据统计-->
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-warning icon"></i>数据统计</div>
+                            <div class="layui-card-body">
+                                <div class="welcome-module">
+                                    <div class="layui-row layui-col-space10">
+                                        <!--用户统计-->
+                                        <div class="layui-col-xs6">
+                                            <div class="panel layui-bg-number">
+                                                <div class="panel-body">
+                                                    <div class="panel-title">
+                                                        <span class="label pull-right layui-bg-blue">实时</span>
+                                                        <h5>用户统计</h5>
+                                                    </div>
+                                                    <div class="panel-content">
+                                                        <h1 class="no-margins">1224</h1>
+                                                        <small>当前分类总记录数</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--专业统计-->
+                                        <div class="layui-col-xs6">
+                                            <div class="panel layui-bg-number">
+                                                <div class="panel-body">
+                                                    <div class="panel-title">
+                                                        <span class="label pull-right layui-bg-cyan">实时</span>
+                                                        <h5>专业统计</h5>
+                                                    </div>
+                                                    <div class="panel-content">
+                                                        <h1 class="no-margins">8</h1>
+                                                        <small>当前分类总记录数</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--就业统计-->
+                                        <div class="layui-col-xs6">
+                                            <div class="panel layui-bg-number">
+                                                <div class="panel-body">
+                                                    <div class="panel-title">
+                                                        <span class="label pull-right layui-bg-orange">实时</span>
+                                                        <h5>就业统计</h5>
+                                                    </div>
+                                                    <div class="panel-content">
+                                                        <h1 class="no-margins">335</h1>
+                                                        <small>当前分类总记录数</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--竞赛统计-->
+                                        <div class="layui-col-xs6">
+                                            <div class="panel layui-bg-number">
+                                                <div class="panel-body">
+                                                    <div class="panel-title">
+                                                        <span class="label pull-right layui-bg-green">实时</span>
+                                                        <h5>竞赛统计</h5>
+                                                    </div>
+                                                    <div class="panel-content">
+                                                        <h1 class="no-margins">43</h1>
+                                                        <small>当前分类总记录数</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--快捷入口-->
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-credit-card icon icon-blue"></i>快捷入口</div>
+                            <div class="layui-card-body">
+                                <div class="welcome-module">
+                                    <div class="layui-row layui-col-space10 layuimini-qiuck">
+                                        <!--用户查询-->
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="page/user/findUser.html" data-title="用户查询" data-icon="fa fa-window-maximize">
+                                                <i class="fa fa-user"></i>
+                                                <cite>用户查询</cite>
+                                            </a>
+                                        </div>
+                                        <!--院系查询-->
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="page/college/find.html" data-title="院系查询" data-icon="fa fa-gears">
+                                                <i class="fa fa-university"></i>
+                                                <cite>院系查询</cite>
+                                            </a>
+                                        </div>
+                                        <!--成员统计-->
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="page/member/statisticsMember.html" data-title="成员统计" data-icon="fa fa-file-text">
+                                                <i class="fa fa-group"></i>
+                                                <cite>成员统计</cite>
+                                            </a>
+                                        </div>
+                                        <!--公开课查询-->
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+
+                                            <a href="javascript:;" layuimini-content-href="page/openclass/findClass.html" data-title="公开课查询" data-icon="fa fa-dot-circle-o">
+                                                <i class="fa fa-book"></i>
+                                                <cite>公开课查询</cite>
+                                            </a>
+                                        </div>
+                                        <!--竞赛查询-->
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="page/competition/findCompetition.html" data-title="竞赛查询" data-icon="fa fa-calendar">
+                                                <i class="fa fa-trophy"></i>
+                                                <cite>竞赛查询</cite>
+                                            </a>
+                                        </div>
+                                        <!--学分统计-->
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="page/credit/statisticsCredit.html" data-title="学分统计" data-icon="fa fa-hourglass-end">
+                                                <i class="fa fa-lightbulb-o"></i>
+                                                <cite>学分统计</cite>
+                                            </a>
+                                        </div>
+                                        <!--大赛官网-->
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="http://www.52jingsai.com/" data-title="大赛官网" data-icon="fa fa-gears">
+                                                <i class="layui-icon layui-icon-website"></i>
+                                                <cite>大赛官网</cite>
+                                            </a>
+                                        </div>
+                                        <!--百度搜索-->
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="https://www.baidu.com" data-title="百度搜索" data-icon="fa fa-search">
+                                                <i class="fa fa-search"></i>
+                                                <cite>百度搜索</cite>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--就业率统计-->
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-line-chart icon"></i>就业率统计</div>
+                            <div class="layui-card-body">
+                                <div id="echarts-records" style="width: 100%;min-height:500px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md4">
+                <!--公告-->
+                <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-bullhorn icon icon-tip"></i>通知公告</div>
+                    <div class="layui-card-body layui-text">
+                        <div class="layuimini-notice">
+                            <div class="layuimini-notice-title">雅迪科技集团2021届校园招聘简章</div>
+                            <div class="layuimini-notice-extra">2021-01-28</div>
+                            <div class="layuimini-notice-content layui-hide">
+                                雅迪科技集团有限公司创立于2001年，经过十几年的高速发展，
+                                现已成为集电动自行车、电动摩托车及其零配件研发、生产与销售于一体的高端两轮电动车制造企业。
+                                2016年5月19日，雅迪在香港成功上市。
+                            </div>
+                        </div>
+                        <div class="layuimini-notice">
+                            <div class="layuimini-notice-title">龙口市百企千岗高校行—太原科技大学分会场</div>
+                            <div class="layuimini-notice-extra">2020-12-14</div>
+                            <div class="layuimini-notice-content layui-hide">
+                                山东龙口于12月17日举办“龙口市百企千岗高校行—山西高校专场”活动
+                                ，分会场需要组织学生进行线上和线下的直播观看，
+                                线下直播会场：12月17日 9:00西校区B座302 线上直播：关注lksrsj（抖音号）。
+                            </div>
+                        </div>
+                        <div class="layuimini-notice">
+                            <div class="layuimini-notice-title">太原科技大学——浙江德清县人力资源社会保障局组团招聘</div>
+                            <div class="layuimini-notice-extra">2020-11-16</div>
+                            <div class="layuimini-notice-content layui-hide">
+                                时间：2020年11月20日，上午9:30<br>
+                                地点：主校区体育馆二层大厅<br>
+                            </div>
+                        </div>
+                        <div class="layuimini-notice">
+                            <div class="layuimini-notice-title">徐工集团 徐工施维英2021校园招聘简章（销售经理）</div>
+                            <div class="layuimini-notice-extra">2020-10-27</div>
+                            <div class="layuimini-notice-content layui-hide">
+                                徐州徐工施维英机械有限公司（徐工施维英）是徐工集团旗下、全面致力于混凝土机械可持续发展的核心企业，
+                                是徐工集团与德国施维英公司战略合作后成立的合资公司。
+                                公司着力打造集混凝土机械生产、销售、租赁、再制造及二手车交易为一体的高端工程机械制造服务型企业。
+                            </div>
+                        </div>
+                        <div class="layuimini-notice">
+                            <div class="layuimini-notice-title">太原科技大学——张家港市人力资源管理服务中心组团招聘简章</div>
+                            <div class="layuimini-notice-extra">2020-10-26</div>
+                            <div class="layuimini-notice-content layui-hide">
+                                时间：10月28日上午9:30<br>
+                                地点：西校区B-305<br>
+                            </div>
+                        </div>
+                        <div class="layuimini-notice">
+                            <div class="layuimini-notice-title">长沙中联重科环境产业有限公司招聘简章</div>
+                            <div class="layuimini-notice-extra">2020-9-30</div>
+                            <div class="layuimini-notice-content layui-hide">
+                                中联环境位于湖南省长沙市麓谷高新技术开发区，占地1417亩，总投资14亿元，资产102亿，
+                                是一家集环卫机械与环境装备等高新技术装备研发制造、环境项目投资运营为一体的全环境产业集团，
+                                经营规模与品牌影响力居于行业前列。
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--版权信息：登陆地址、二维码未设置-->
+                <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-fire icon"></i>版本信息</div>
+                    <div class="layui-card-body layui-text">
+                        <table class="layui-table">
+                            <colgroup>
+                                <col width="100">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td>项目名称</td>
+                                <td>
+                                    UOLab联合开放实验室
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>当前版本</td>
+                                <td>v1.0.0</td>
+                            </tr>
+                            <tr>
+                                <td>作者名称</td>
+                                <td>郭斌</td>
+                            </tr>
+                            <tr>
+                                <td>登录地址</td>
+                                <td>
+                                    <a href="http://layuimini.99php.cn/iframe/v2/index.html" target="_blank">点击查看</a><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>二维码登录</td>
+                                <td>
+                                  <img src="">
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script>
+    layui.use(['layer', 'miniTab','echarts'], function () {
+        var $ = layui.jquery,
+            layer = layui.layer,
+            miniTab = layui.miniTab,
+            echarts = layui.echarts;
+
+        miniTab.listen();
+
+        /**
+         * 查看公告信息
+         **/
+        $('body').on('click', '.layuimini-notice', function () {
+            var title = $(this).children('.layuimini-notice-title').text(),
+                noticeTime = $(this).children('.layuimini-notice-extra').text(),
+                content = $(this).children('.layuimini-notice-content').html();
+            var html = '<div style="padding:15px 20px; text-align:justify; line-height: 22px;border-bottom:1px solid #e2e2e2;background-color: #2f4056;color: #ffffff">\n' +
+                '<div style="text-align: center;margin-bottom: 20px;font-weight: bold;border-bottom:1px solid #718fb5;padding-bottom: 5px"><h4 class="text-danger">' + title + '</h4></div>\n' +
+                '<div style="font-size: 12px">' + content + '</div>\n' +
+                '</div>\n';
+            parent.layer.open({
+                type: 1,
+                title: '系统公告'+'<span style="float: right;right: 1px;font-size: 12px;color: #b1b3b9;margin-top: 1px">'+noticeTime+'</span>',
+                area: '300px;',
+                shade: 0.8,
+                id: 'layuimini-notice',
+                btn: ['查看', '取消'],
+                btnAlign: 'c',
+                moveType: 1,
+                content:html,
+                success: function (layero) {
+                    var btn = layero.find('.layui-layer-btn');
+                    btn.find('.layui-layer-btn0').attr({
+                        href: 'http://job.tyust.edu.cn/module/news?type_id=6275',
+                        target: '_blank'
+                    });
+                }
+            });
+        });
+
+        /**
+         * 报表功能
+         */
+        var chartDom = document.getElementById('echarts-records');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            xAxis: {
+                type: 'category',
+                data: ['计科院', '经理管理学院', '机械工程学院', '电子信息学院', '交通运输学院', '环境安全学院', '艺术学院']
+            },
+            yAxis: [
+                {
+                    type: 'value',
+                    axisLabel: {
+                        show: true,
+                        interval: 'auto',
+                    },
+                    show: true
+                }
+            ],
+            series: [{
+                data: [65, 57, 71, 59, 50, 61, 53],
+                type: 'bar'
+            }]
+        };
+
+        option && myChart.setOption(option);
+
+
+        // echarts 窗口缩放自适应
+        window.onresize = function(){
+            myChart.resize();
+        }
+
+    });
+</script>
+</body>
+</html>

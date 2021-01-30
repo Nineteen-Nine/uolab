@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>学分录入</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form layuimini-form">
+
+    <!--姓名-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">姓名</label>
+        <div class="layui-input-block">
+            <input id="realname" type="text" name="realname"  placeholder="请输入姓名" lay-verify="required" lay-reqtext="请输入姓名" value="" class="layui-input" onblur="checkRealName()"><span id="msg1"></span>
+            <tip>2-5个汉字</tip>
+        </div>
+    </div>
+    <!--学号-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">学号</label>
+        <div class="layui-input-block">
+            <input id="studentNum" type="number" name="studentNum" lay-verify="required" lay-reqtext="学号不能为空" placeholder="请输入学号" value="" class="layui-input" onblur="checkStudentNum()"><span id="msg2"></span>
+        </div>
+    </div>
+    <!--年级-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">年级</label>
+        <div class="layui-input-block">
+            <input id="year" type="text" name="year" lay-verify="required" lay-reqtext="年级未选择！" placeholder="请选择入学年份" value="" class="layui-input" readonly>
+        </div>
+    </div>
+    <!--院系-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">院系</label>
+        <div class="layui-input-block">
+            <select name="college" lay-filter="college"lay-verify="required" lay-reqtext="未选择院系">
+                <option value="" selected></option>
+                <option value="1">计算机科学与技术学院</option>
+                <option value="2" >电子信息学院</option>
+                <option value="3">经济管理学院</option>
+            </select>
+        </div>
+    </div>
+    <!--分值-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">分值</label>
+        <div class="layui-input-block">
+            <input id="credit" type="number" name="credit" lay-verify="required" lay-reqtext="未输入分值" placeholder="请输入分值" value="" class="layui-input" onblur="checkCredit()"><span id="msg3"></span>
+        </div>
+    </div>
+    <!--事由-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">事由</label>
+        <div class="layui-input-block">
+            <select name="things" lay-filter="things"lay-verify="required" lay-reqtext="未选择事由">
+                <option value="" selected></option>
+                <option value="1">Java入门</option>
+                <option value="2" >C语言设计</option>
+                <option value="3">C++的应用</option>
+            </select>
+        </div>
+    </div>
+    <!--取得时间-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">取得时间</label>
+        <div class="layui-input-block">
+            <input type="text" name="date" id="date" autocomplete="off" class="layui-input" placeholder="请选择分数取得时间" readonly lay-verify="required" lay-reqtext="未选择时间">
+        </div>
+    </div>
+    <!--录入时间-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">录入时间</label>
+        <div class="layui-input-block">
+            <input type="text" name="today" id="today" autocomplete="off" class="layui-input" disabled>
+        </div>
+    </div>
+    <!--录入人-->
+    <div class="layui-form-item">
+        <label class="layui-form-label required">录入人</label>
+        <div class="layui-input-block">
+            <input id="person" type="text" name="person" value="管理员" class="layui-input" disabled>
+        </div>
+    </div>
+    <!--备注-->
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注信息</label>
+        <div class="layui-input-block">
+            <textarea name="remark" class="layui-textarea" placeholder="请输入备注信息"></textarea>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">确认保存</button>
+        </div>
+    </div>
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="../../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+
+<script>
+    layui.use(['form','laydate'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            laydate = layui.laydate,
+            $ = layui.$;
+        /*限定年份*/
+        var ins22 = laydate.render({
+            elem: '#year'
+            ,type : 'year'
+            ,trigger:'click'
+            ,max: maxDate()
+        });
+        /*获取时间*/
+        var ins23 = laydate.render({
+            elem: '#today',
+            value : maxDate()
+        });
+        function maxDate() {
+            var now = new Date();
+            return now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+        }
+
+        //选择日期
+        var ins = laydate.render({
+            elem: '#date'
+            ,max: maxDate()
+        });
+        //监听提交
+        form.on('submit(saveBtn)', function (data) {
+            var index = layer.alert(JSON.stringify(data.field), {
+                title: '最终的提交信息'
+            }, function () {
+
+                // 关闭弹出层
+                layer.close(index);
+
+                var iframeIndex = parent.layer.getFrameIndex(window.name);
+                parent.layer.close(iframeIndex);
+
+            });
+
+            return false;
+        });
+
+    });
+</script>
+<!--验证-->
+<script>
+    /*验证姓名*/
+    function checkRealName(){
+        var rname = document.getElementById('realname').value;
+        var spanEle1 = document.getElementById("msg1")
+        var pattern = /^[\u4e00-\u9fa5]{2,5}$/;
+        if(rname == null || rname == '' || rname.trim().length == 0){
+            spanEle1.innerHTML = "<small style='color: red'>未输入姓名</small>"
+        }else if(!pattern.test(rname)){
+            spanEle1.innerHTML = "<small style='color: red'>请输入正确的姓名</small>"
+        }else{
+            spanEle1.innerHTML = ""
+        }
+    }
+    /*验证学号*/
+    function checkStudentNum(){
+        var studentNum = document.getElementById('studentNum').value;
+        var spanEle2 = document.getElementById("msg2")
+        var pattern = /^[0-9]{12}$/;
+        if(studentNum == null || studentNum == '' || studentNum.trim().length == 0){
+            spanEle2.innerHTML = "<small style='color: red'>未输入学号</small>"
+        }else if(!pattern.test(studentNum)){
+            spanEle2.innerHTML = "<small style='color: red'>请输入正确的学号</small>"
+        }else{
+            spanEle2.innerHTML = ""
+        }
+    }
+    /*验证分值*/
+    function checkCredit(){
+        var credit = document.getElementById('credit').value;
+        var spanEle3 = document.getElementById("msg3")
+        var pattern = /^\d{1,2}(\.\d?)?$/;
+        if(credit == null || credit == '' || credit.trim().length == 0){
+            spanEle3.innerHTML = "<small style='color: red'>未输入学分</small>"
+        }else if(!pattern.test(credit)){
+            spanEle3.innerHTML = "<small style='color: red'>请输入正确的学分</small>"
+        }else{
+            spanEle3.innerHTML = ""
+        }
+    }
+
+</script>
+</body>
+</html>

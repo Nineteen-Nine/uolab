@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>学分录入</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        p{
+            width:150px;
+            height: 36px;
+            margin-left: 20px;
+            line-height: 36px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form layuimini-form">
+
+    <!--姓名-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <p>胖虎</p>
+        </div>
+    </div>
+    <!--学号-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">学号</label>
+        <div class="layui-input-block">
+            <p>201920050318</p>
+        </div>
+    </div>
+    <!--年级-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">年级</label>
+        <div class="layui-input-block">
+            <p>2019</p>
+        </div>
+    </div>
+    <!--院系-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">院系</label>
+        <div class="layui-input-block">
+            <p>计算机科学与技术</p>
+        </div>
+    </div>
+    <!--分值-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">分值</label>
+        <div class="layui-input-block">
+            <p>10</p>
+        </div>
+    </div>
+    <!--事由-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">事由</label>
+        <div class="layui-input-block">
+            <p>Java入门</p>
+        </div>
+    </div>
+    <!--取得时间-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">取得时间</label>
+        <div class="layui-input-block">
+            <p>2021-01-01</p>
+        </div>
+    </div>
+    <!--录入时间-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">录入时间</label>
+        <div class="layui-input-block">
+            <p>2021-01-30</p>
+        </div>
+    </div>
+    <!--录入人-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">录入人</label>
+        <div class="layui-input-block">
+            <p>大雄</p>
+        </div>
+    </div>
+    <!--备注-->
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注信息</label>
+        <div class="layui-input-block">
+            <p>无</p>
+        </div>
+    </div>
+
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="../../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            $ = layui.$;
+    });
+</script>
+
+</body>
+</html>
